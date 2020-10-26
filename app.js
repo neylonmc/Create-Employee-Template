@@ -10,7 +10,75 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const teamMembers = []; 
+const idArray = [];
 
+
+function askedQuestions() {
+
+    function createManger() {
+        console.log ("Please build your team."); 
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "managerName",
+                message: "Please type your managers name: ",
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    } else {
+                        return "Please enter at least one character for your managers name."; 
+                    }
+                }
+            },
+            {
+                type: "input",
+                name: "managerId",
+                message: "Please enter your manager's ID: ",
+                validate: answer => {
+                    const id = answer.match(
+                        /^[1-9]\d*$/ // The ID must be an interval between 1-9. 
+                    );
+                    if (id) {
+                        return true; 
+                    }
+                    return "Please enter numbers between 1-9."     
+                    }
+            },
+            {
+                type: "input",
+                name: "managerEmail",
+                message: "Please enter your manager's email: "
+            },
+            {
+                type: "input",
+                name: "managersOfficeNumber",
+                message: "Please enter your manager's office phone number: ",
+                validate: answer => {
+                    const id = answer.match(
+                        /^[1-9]\d*$/ // The ID must be an interval between 1-9. 
+                    );
+                    if (id) {
+                        return true; 
+                    }
+                    return "Please enter numbers between 1-9."     
+                    }
+            }
+        ]).then(answers => {
+            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
+            teamMembers.push(manager);
+            idArray.push(answers.managerId);
+            createTeam();
+          });
+        }
+
+    function createTeam() {
+        
+    }
+    createManger();
+}
+
+askedQuestions();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
