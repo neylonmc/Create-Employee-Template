@@ -16,7 +16,7 @@ const idArray = [];
 
 function askedQuestions() {
 
-    function createManger() {
+    function createManager() {
         console.log ("Please build your team."); 
         inquirer.prompt([
             {
@@ -73,9 +73,9 @@ function askedQuestions() {
         }
 
     function createTeam() {
-        
+
     }
-    createManger();
+    createManager();
 }
 
 askedQuestions();
