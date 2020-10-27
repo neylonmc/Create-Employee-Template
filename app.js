@@ -143,6 +143,50 @@ function askedQuestions() {
           });
     }
     
+    function addIntern() {
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "internName",
+                message: "Please enter the intern's name: ",
+                validate: answer => {
+                  if (answer !== "") {
+                    return true;
+                  }
+                  return "Please enter a name of the intern.";
+                }
+            },
+            {
+                type: "input",
+                name: "internId",
+                message: "Please enter the intern's ID: ",
+                validate: answer => {
+                    const id = answer.match(
+                        /^[1-9]\d*$/ // The ID must be an interval between 1-9. 
+                    );
+                    if (id) {
+                        return true; 
+                    }
+                    return "Please enter numbers between 1-9."     
+                }
+            },
+            {
+                type: "input",
+                name: "internEmail",
+                message: "Please enter the intern's email: ",
+            },
+            {
+                type: "input",
+                name: "internSchool",
+                message: "Please enter the intern's school: ",
+            },
+        ]).then(answers => {
+            const intern = new engineer(answers.internrName, answers.internId, answers.internEmail, answers.internSchool);
+            teamMembers.push(intern);
+            idArray.push(answers.internId);
+            createTeam();
+          });
+    }
     createManager();
 }
 
