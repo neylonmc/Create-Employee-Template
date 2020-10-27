@@ -41,5 +41,5 @@
   <img src="assets/end.gif" alt ="ending application"> 
   
 ## Questions? Contact Me
-  GitHub: [neylonmc]("https://github.com/neylonmc")
-  Email: [neylonmc@gmail.com]("mailto:neylonmc@gmail.com") 
+  * GitHub: [neylonmc]("https://github.com/neylonmc")
+  * Email: [neylonmc@gmail.com]("mailto:neylonmc@gmail.com") 
