@@ -22,12 +22,14 @@
   The application will then ask if the user would like to add an engineer or intern team member and answer the questions provided. 
   <img src="assets/engineer.gif" alt ="gif of engineer selection"> 
 
-  If the user selects "I don't want to add any more team members, the application will end. 
+  If the user selects "I don't want to add any more team members", the application will end. 
   <img src="assets/end.gif" alt ="ending application"> 
 
    Once the application ends, an HTML file will be dynamically created with the information provided by the users answers.
   <img src="assets/test.gif" alt ="test being presented"> 
-  
+   <img src="assets/finishHTML.png" alt ="html"> 
+
+
 ## License
   [![License](https://img.shields.io/badge/License-MIT%202.0-blue.svg)](https://opensource.org/licenses/MIT)
   
