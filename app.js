@@ -14,7 +14,7 @@ const teamMembers = [];
 const idArray = [];
 
 
-function askedQuestions() {
+function askedQuestions() { 
 
     function createManager() {
         console.log ("Please build your team."); 
@@ -65,7 +65,7 @@ function askedQuestions() {
                     }
             }
         ]).then(answers => {
-            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
+            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managersOfficeNumber);
             teamMembers.push(manager);
             idArray.push(answers.managerId);
             createTeam();
