@@ -16,7 +16,17 @@
   ```
   
 ## Usage
-  The user will need to type $node app to start the application. 
+  The user will need to type $node app to start the application. The user will then answer the questions provided about their manager.
+  <img src="assets/start.gif" alt ="gif of deployed website">
+
+  The application will then ask if the user would like to add an engineer or intern team member and answer the questions provided. 
+  <img src="assets/engineer.gif" alt ="gif of engineer selection"> 
+
+  If the user selects "I don't want to add any more team members, the application will end. 
+  <img src="assets/end.gif" alt ="ending application"> 
+
+   Once the application ends, an HTML file will be dynamically created with the information provided by the users answers.
+  <img src="assets/test.gif" alt ="test being presented"> 
   
 ## License
   [![License](https://img.shields.io/badge/License-MIT%202.0-blue.svg)](https://opensource.org/licenses/MIT)
@@ -26,6 +36,7 @@
   
 ## Tests
   To run test, the user will have to type $npm run test . 
+  <img src="assets/end.gif" alt ="ending application"> 
   
 ## Questions? Contact Me
   GitHub: [neylonmc]("https://github.com/neylonmc")
