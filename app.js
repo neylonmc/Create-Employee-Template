@@ -97,6 +97,51 @@ function askedQuestions() {
               }
             });        
     }
+
+    function addEngineer() {
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "engineerName",
+                message: "Please enter the engineer's name: ",
+                validate: answer => {
+                  if (answer !== "") {
+                    return true;
+                  }
+                  return "Please enter a name of the engineer.";
+                }
+            },
+            {
+                type: "input",
+                name: "engineerId",
+                message: "Please enter the engineer's ID: ",
+                validate: answer => {
+                    const id = answer.match(
+                        /^[1-9]\d*$/ // The ID must be an interval between 1-9. 
+                    );
+                    if (id) {
+                        return true; 
+                    }
+                    return "Please enter numbers between 1-9."     
+                }
+            },
+            {
+                type: "input",
+                name: "engineerEmail",
+                message: "Please enter the engineer's email: ",
+            },
+            {
+                type: "input",
+                name: "engineerGithub",
+                message: "Please enter the engineer's Github username: ",
+            },
+        ]).then(answers => {
+            const engineer = new engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+            teamMembers.push(engineer);
+            idArray.push(answers.engineerId);
+            createTeam();
+          });
+    }
     
     createManager();
 }
